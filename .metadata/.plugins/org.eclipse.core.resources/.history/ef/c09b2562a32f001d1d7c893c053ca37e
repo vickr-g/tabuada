@@ -1,0 +1,60 @@
+package br.senai.sp.jandira.gui;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class FrameTabuada {
+	
+	public String titulo;
+	public int largura;
+	public int altura;
+	
+	
+	public Color corPainel = new Color(225, 225, 225 );
+	public Color corLabel = new Color(121, 121, 121);
+	public Color corDoBotaoC = new Color(124, 194, 130);
+	public Color corDoBotaoL = new Color(251, 196, 68 );
+	public Color corDoTitulo = new Color(251, 0, 0);
+	public Font fontTitulo = new Font("arial", Font.BOLD, 14);
+	
+	// config de tela
+	
+	public void criarTela() {
+		JFrame tela = new JFrame();
+		tela.setTitle(titulo);
+		tela.setSize(largura, altura);
+		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tela.setLayout(null);
+		
+	// componentes de tela
+		
+		Container painel = tela.getContentPane();
+		
+		JLabel labelTabuada = new JLabel();
+		Font fonteTabuada = new Font("SansSerif", Font.BOLD, 30);
+		labelTabuada.setText("Tabuada 1.0");
+		labelTabuada.setBounds(110, 20, 210, 30);
+		labelTabuada.setForeground(corDoTitulo);
+		labelTabuada.setFont(fonteTabuada);
+		
+		
+		//mostrar na tela 
+		painel.add(labelTabuada);
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		tela.setVisible(true);
+	}
+
+}

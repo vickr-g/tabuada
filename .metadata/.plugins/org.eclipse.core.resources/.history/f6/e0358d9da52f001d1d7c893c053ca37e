@@ -1,0 +1,73 @@
+package br.senai.sp.jandira.gui;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+
+public class FrameTabuada {
+	
+	public String titulo;
+	public int largura;
+	public int altura;
+	
+	
+	public Color corPainel = new Color(225, 225, 225 );
+	public Color corLabel = new Color(121, 121, 121);
+	public Color corDoBotaoC = new Color(124, 194, 130);
+	public Color corDoBotaoL = new Color(251, 196, 68 );
+	public Color corDoTitulo = new Color(251, 0, 0);
+	public Font fontTitulo = new Font("arial", Font.BOLD, 14);
+	
+	// config de tela
+	
+	public void criarTela() {
+		JFrame tela = new JFrame();
+		tela.setTitle(titulo);
+		tela.setSize(largura, altura);
+		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tela.setLayout(null);
+		
+	// componentes de tela
+		
+		Container painel = tela.getContentPane();
+		
+		JLabel labelTabuada = new JLabel();
+		Font fonteTabuada = new Font("SansSerif", Font.BOLD, 28);
+		labelTabuada.setText("Tabuada 1.0");
+		labelTabuada.setBounds(110, 20, 210, 30);
+		labelTabuada.setForeground(corDoTitulo);
+		labelTabuada.setFont(fonteTabuada);
+		
+		//subtitulo
+		
+		JTextArea labelSubtitulo= new JTextArea();
+		Font labelTexto = new Font("SansSerif", Font.BOLD, 14);
+		labelSubtitulo.setText("Com a tabuada 1.0 os seus problemas acabaram. Calcule"
+		+ "a tabuada que desejar em segundos!");
+		labelSubtitulo.setBounds(110, 25, 212, 30);
+		labelSubtitulo.setForeground(Color.GRAY);
+		labelSubtitulo.setEditable(false);
+		labelSubtitulo.setLineWrap(false);
+		labelSubtitulo.setFont(labelTexto);
+		
+		//mostrar na tela 
+		painel.add(labelTabuada);
+		painel.add(labelSubtitulo);
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		tela.setVisible(true);
+	}
+
+}

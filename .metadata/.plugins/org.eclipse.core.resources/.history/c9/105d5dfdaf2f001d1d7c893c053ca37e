@@ -1,0 +1,98 @@
+package br.senai.sp.jandira.gui;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Font;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class FrameTabuada {
+	
+	public String titulo;
+	public int largura;
+	public int altura;
+	
+	
+	public Color corPainel = new Color(225, 225, 225 );
+	public Color corLabel = new Color(121, 121, 121);
+	public Color corDoBotaoC = new Color(124, 194, 130);
+	public Color corDoBotaoL = new Color(251, 196, 68 );
+	public Color corDoTitulo = new Color(251, 0, 0);
+	public Font fontTitulo = new Font("arial", Font.BOLD, 14);
+	
+	// config de tela
+	
+	public void criarTela() {
+		JFrame tela = new JFrame();
+		tela.setTitle(titulo);
+		tela.setSize(largura, altura);
+		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tela.setLayout(null);
+		
+	// componentes de tela
+		
+		Container painel = tela.getContentPane();
+		
+		JLabel labelTabuada = new JLabel();
+		Font fonteTabuada = new Font("SansSerif", Font.BOLD, 28);
+		labelTabuada.setText("Tabuada 1.0");
+		labelTabuada.setBounds(110, 20, 210, 30);
+		labelTabuada.setForeground(corDoTitulo);
+		labelTabuada.setFont(fonteTabuada);
+		
+		//subtitulo
+		
+		JTextArea labelSubtitulo= new JTextArea();
+		Font labelTexto = new Font("SansSerif", Font.ROMAN_BASELINE, 12);
+		labelSubtitulo.setText("Com a tabuada 1.0 os seus problemas acabaram. Calcule"
+		+ "a tabuada que desejar em segundos!");
+		labelSubtitulo.setBounds(110, 50, 330, 35);;
+		labelSubtitulo.setForeground(Color.GRAY);
+		labelSubtitulo.setEditable(false);
+		labelSubtitulo.setLineWrap(true);
+		labelSubtitulo.setFont(labelTexto);
+		
+		//mostrar multiplicando
+		JLabel labelMultiplicando = new JLabel();
+		Font multiplicandoII = new Font("SansSerif", Font.PLAIN, 14);
+		labelMultiplicando.setBounds(30, 120, 160, 35);
+		labelMultiplicando.setHorizontalAlignment(JLabel.RIGHT);
+		labelMultiplicando.setText("Multiplicando:");
+		labelMultiplicando.setFont(multiplicandoII);
+		
+		JTextField textFieldMultiplicando = new JTextField();
+		textFieldMultiplicando.setBounds(200, 120, 160, 35);
+		textFieldMultiplicando.setBorder(BorderFactory.createLineBorder(Color.blue));
+		
+		//mostrar minimo multiplicador
+		
+		JLabel labelMinimo = new  JLabel();
+		Font minimiF = new Font("SansSerif", Font.PLAIN, 14);
+		labelMinimo.setText("Minímo Multiplicador");
+		labelMinimo.setHorizontalAlignment(JLabel.RIGHT);
+		labelMinimo.setBounds(30, 160, 160, 35);
+		labelMinimo.setFont(minimiF);
+		
+	
+		JTextField textFieldMinimo = new JTextField();
+		textFieldMinimo.setBounds(200, 160, 160, 35);
+		textFieldMinimo.setBorder(BorderFactory.createLineBorder(Color.blue));
+		
+		//mostrar na tela 
+		painel.add(labelTabuada);
+		painel.add(labelSubtitulo);
+		painel.add(labelMultiplicando);
+		painel.add(textFieldMultiplicando);
+		painel.add(labelMinimo);
+		painel.add(textFieldMinimo);
+		
+		
+	
+		tela.setVisible(true);
+	}
+
+}
